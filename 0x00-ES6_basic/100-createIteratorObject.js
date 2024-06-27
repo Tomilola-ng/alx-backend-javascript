@@ -9,7 +9,7 @@ export default function createIteratorObject(report) {
   const iterator = {
     next() {
       if (this.current < allEmployees.length) {
-        return { value: allEmployees[this.current++], done: false };
+        return { value: allEmployees[this.current + 1], done: false };
       }
       return { done: true };
     },
