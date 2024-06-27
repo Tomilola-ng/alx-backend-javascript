@@ -5,5 +5,5 @@ export default function iterateThroughObject(reportWithIterator) {
     employeeNames.push(employee);
   }
 
-  return employeeNames.join(" | ");
+  return employeeNames.join(' | ');
 }
