@@ -1,20 +1,13 @@
-export default function cleanSet(set, startString) {
-  if (
-    !set && !startString && !(set instanceof Set) && typeof startString !== 'string'
-  ) {
-    return '';
-  }
+export default function cleanSet(set, firstStr) {
+  if (firstStr === "") return "";
 
-  const parts = [];
+  const resp = [];
 
-  for (const value of set.values()) {
-    if (typeof value === 'string' && value.startsWith(startString)) {
-      const valueSubStr = value.substring(startString.length);
-
-      if (valueSubStr && valueSubStr !== value) {
-        parts.push(valueSubStr);
-      }
+  for (const value of set) {
+    if (value.startsWith(firstStr)) {
+      resp.push(value.slice(firstStr.length));
     }
   }
-  return parts.join('-');
+
+  return resp.join("-");
 }
